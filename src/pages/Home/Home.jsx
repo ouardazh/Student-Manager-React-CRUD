@@ -16,22 +16,31 @@ function Student() {
       age: inputAge,
       city: inputCity,
     };
-    setStudent([...student, newStudent]);
+
+    if(editStudent){
+      setStudent(student.map((item) => item === editestudent ? newStudent : item));
+      Seteditestudent(null);
+    }
+    else{
+      setStudent([...student, newStudent]);
+    }
+    
+    
   };
 
   const deleteStudent = (studente) => {
     setStudent(student.filter((x) => x !== studente));
   };
 
-  const editStudent = (newStd) => {
-    const newStud = student.map((s) => {
-      if (s.id === newStd) {
-        return newStd;
-      }
-      return s;
-    });
+  // !editeeeee-------
+  const [editestudent, Seteditestudent] = useState(null)
+  const editStudent = (item) => {
+    Seteditestudent (item)
+    setInputName(item.name)
+    SetInputAge (item.age) 
+    setInputCity (item.city)
   };
-
+ 
   return (
     <div>
       <div className="container">
@@ -63,20 +72,32 @@ function Student() {
         </div>
       </div>
 
-      {student.map((nme, index) => {
-        return (
-          <div>
-            <h3 key={index}> {nme.name} </h3>
-            <p key={index}>
-              {" "}
-              {nme.age} . {nme.city}{" "}
-            </p>
-            <button onClick={() => deleteStudent(nme)}>Delete</button>
-            <button>Edite</button>
+      <div className="secondContainer">
+        <div className="infoStudent">
+          <h3>Students</h3>
+          <p>total: {student.length}</p>
+        </div>
+        
+     {student.map((nme, index) => {
+          return (
+          <div className="infoStudent">
+            <div>
+              <h4 key={index}> {nme.name} </h4>
+               <p className="textAgeCity" key={index}> {nme.age} . {nme.city}</p>
+            </div>
+            <div>
+              <button onClick={()=>editStudent(nme)} className="editBtn">Edite</button>
+              <button className="deleteBtn" onClick={() => deleteStudent(nme)}>Delete</button>
+            </div>
+            
+            
           </div>
         );
       })}
     </div>
+    <p className="lastTextgris">Practice Project: data is stored in useState and resets after refreshinh the page.</p>
+      </div>
+     
   );
 }
 export default Student;

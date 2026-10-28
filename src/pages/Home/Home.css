@@ -4,6 +4,9 @@
     box-sizing: border-box;
     
 }
+body{
+    background-color: rgb(245, 247, 251);
+}
 .container{
     padding: 1rem;
     width: 55%;
@@ -47,4 +50,97 @@ input{
     border: 1px solid rgb(210, 210, 214);
     border-radius: 6px;
     margin-top: 6px;
+}
+.secondContainer{
+    padding: 1rem 2rem;
+    width: 52.4%;
+    border-radius: 10px;
+    margin: 0px auto;
+     border: 1px solid rgb(210, 210, 214);
+     background-color: white;
+    
+}
+.infoStudent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0px;
+    border-bottom: 1px solid rgb(240, 240, 242);
+
+}
+
+.deleteBtn{
+    background-color: rgb(238, 214, 213);
+    color: rgb(153, 34, 35);
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    padding: 8px 12px;
+}
+.editBtn{
+    background-color: rgb(213, 219, 224);
+    color: rgb(49, 60, 77);
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    padding: 8px 12px;
+    margin-right: 6px;
+}
+.textAgeCity{
+    color: rgb(168, 175, 184);
+}
+.lastTextgris{
+    color: rgb(123, 128, 141);
+    font-size: 12px;
+    text-align: center;
+    padding: 1rem;
+}
+
+
+
+/* !----------Tablet--------------- */
+@media (min-width: 601px) and (max-width: 1024px) {
+  
+}
+
+/* !-----------Mobile------------- */
+@media (max-width: 600px) {
+   
+.container{
+    width: 90%;
+}
+.containerInputs{
+    flex-direction: column;
+}
+h1{
+    font-size: 30px;
+}
+.secondContainer{
+    width: 80%;
+    
+}
+.infoStudent{
+    flex-direction: column;
+}
+
+.deleteBtn{
+    background-color: rgb(238, 214, 213);
+    color: rgb(153, 34, 35);
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    padding: 8px 12px;
+}
+.editBtn{
+    background-color: rgb(213, 219, 224);
+    color: rgb(49, 60, 77);
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    padding: 8px 12px;
+    margin-right: 6px;
+}
+
+
+
 }
